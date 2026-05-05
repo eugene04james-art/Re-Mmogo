@@ -1,6 +1,17 @@
-import { RouterProvider } from "react-router";
-import { router } from "./routes";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import LoginPage from "./components/LoginPage";
+import Dashboard from "./components/Dashboard"; 
 
-export default function App() {
-  return <RouterProvider router={router} />;
+function App() {
+  return (
+    <Router>
+      <Routes>
+        <Route path="/" element={<Dashboard />} />
+        <Route path="/login" element={<LoginPage />} />
+      </Routes>
+    </Router>
+  );
 }
+
+export default App;
